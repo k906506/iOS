@@ -16,6 +16,7 @@
 		C018D9C12844CF550055D082 /* Basic_01Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C018D9C02844CF550055D082 /* Basic_01Tests.swift */; };
 		C018D9CB2844CF550055D082 /* Basic_01UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C018D9CA2844CF550055D082 /* Basic_01UITests.swift */; };
 		C018D9CD2844CF550055D082 /* Basic_01UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C018D9CC2844CF550055D082 /* Basic_01UITestsLaunchTests.swift */; };
+		C018D9DA2844D6320055D082 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = C018D9D92844D6320055D082 /* Quote.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		C018D9C62844CF550055D082 /* Basic_01UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Basic_01UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C018D9CA2844CF550055D082 /* Basic_01UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basic_01UITests.swift; sourceTree = "<group>"; };
 		C018D9CC2844CF550055D082 /* Basic_01UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basic_01UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C018D9D92844D6320055D082 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				C018D9B22844CF550055D082 /* Assets.xcassets */,
 				C018D9B42844CF550055D082 /* LaunchScreen.storyboard */,
 				C018D9B72844CF550055D082 /* Info.plist */,
+				C018D9D92844D6320055D082 /* Quote.swift */,
 			);
 			path = Basic_01;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C018D9DA2844D6320055D082 /* Quote.swift in Sources */,
 				C018D9AE2844CF530055D082 /* ViewController.swift in Sources */,
 				C018D9AA2844CF530055D082 /* AppDelegate.swift in Sources */,
 				C018D9AC2844CF530055D082 /* SceneDelegate.swift in Sources */,
