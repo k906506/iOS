@@ -56,5 +56,71 @@ class ViewController: UIViewController {
         }
         self.numberOutputLabel.text = self.displayNumber
     }
+    
+    @IBAction func tapEqualButton(_ sender: UIButton) {
+        self.operation(self.currentOp)
+    }
+    
+    @IBAction func tapAddButton(_ sender: UIButton) {
+        self.operation(.Add)
+    }
+    
+    @IBAction func tapSubtractButton(_ sender: UIButton) {
+        self.operation(.Subtract)
+    }
+    
+    @IBAction func tapMultiplyButton(_ sender: UIButton) {
+        self.operation(.Multiply)
+    }
+    
+    @IBAction func tapDivideButton(_ sender: UIButton) {
+        self.operation(.Divide)
+    }
+    
+    // 피연산자를 입력하고 연산자를 입력 -> firstOp에 피연산자, currentOp에 연산자
+    func operation(_ operation : Operation) {
+        if self.currentOp != .Unknown {
+            if !self.displayNumber.isEmpty {
+                self.secondOp = self.displayNumber
+                print(self.secondOp)
+                self.displayNumber = ""
+                
+                guard let first = Double(self.firstOp) else { return }
+                guard let second = Double(self.secondOp) else { return }
+                
+                switch self.currentOp {
+                case .Add:
+                    self.result = String(first + second)
+                    break
+                case .Subtract:
+                    self.result = String(first - second)
+                    break
+                case .Multiply:
+                    self.result = String(first * second)
+                case .Divide:
+                    if secondOp == "0" {
+                        self.numberOutputLabel.text = "오류"
+                        return
+                    }
+                    
+                    self.result = String(first / second)
+                    break
+                default:
+                    break
+                }
+                
+                if let result = Double(self.result), result.truncatingRemainder(dividingBy: 1) == 0 {
+                    self.result = String(Int(result))
+                }
+                
+                self.firstOp = self.result
+                self.numberOutputLabel.text = self.result
+            }
+            self.currentOp = operation
+        } else {
+            self.firstOp = self.displayNumber
+            self.currentOp = operation
+            self.displayNumber = ""
+        }
+    }
 }
-
