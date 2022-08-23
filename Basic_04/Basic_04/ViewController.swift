@@ -26,10 +26,10 @@ class ViewController: UIViewController {
         self.loadDatas()
     }
     
-    @objc func doneButtonTap(_ sender : UIBarButtonItem) {
+    @objc func doneButtonTap() {
         self.navigationItem.leftBarButtonItem = self.editButton
         self.tableView.setEditing(false, animated: true)
-
+        
     }
     
     @IBAction func tabEditButton(_ sender: UIBarButtonItem) {
@@ -93,6 +93,15 @@ extension ViewController : UITableViewDataSource {
             cell.accessoryType = .none
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        self.tasks.remove(at: indexPath.row)
+        tableView.deleteRows(at : [indexPath], with : .automatic)
+        
+        if self.tasks.isEmpty {
+            self.doneButtonTap()
+        }
     }
 }
 
