@@ -103,6 +103,17 @@ extension ViewController : UITableViewDataSource {
             self.doneButtonTap()
         }
     }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        var tasks = self.tasks
+        // 기존 위치의 할 일을 저장
+        let task = tasks[sourceIndexPath.row]
+        // 기존 위치의 할 일을 제거
+        tasks.remove(at: sourceIndexPath.row)
+        // 변경된 위치에 저장한 할 일 삽입
+        tasks.insert(task, at: destinationIndexPath.row)
+        self.tasks = tasks
+    }
 }
 
 extension ViewController : UITableViewDelegate {
