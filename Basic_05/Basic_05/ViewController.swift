@@ -10,11 +10,16 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private var diaryList = [Diary]()
+    private var diaryList = [Diary](){
+        didSet{
+            self.saveDiaryList()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureCollectionView()
+        self.loadDiaryList()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -36,11 +41,46 @@ class ViewController: UIViewController {
         formatter.locale = Locale(identifier: "ko_KR")
         return formatter.string(from: date)
     }
+    
+    private func saveDiaryList() {
+        let data = self.diaryList.map {
+            [
+                "title" : $0.title,
+                "contents" : $0.contents,
+                "date" : $0.date,
+                "isStar" : $0.isStar
+            ]
+        }
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(data, forKey: "diaryList")
+    }
+    
+    private func loadDiaryList() {
+        let userDefaults = UserDefaults.standard
+        guard let diaryData = userDefaults.object(forKey: "diaryList") as? [[String : Any]] else { return }
+        
+        self.diaryList = diaryData.compactMap{
+            guard let title = $0["title"] as? String else { return nil}
+            guard let contents = $0["contents"] as? String else { return nil}
+            guard let date = $0["date"] as? Date else { return nil}
+            guard let isStar = $0["isStar"] as? Bool else { return nil}
+            return Diary(title: title, contents: contents, date: date, isStar: isStar)
+        }
+        
+        self.diaryList = self.diaryList.sorted(by: {
+            $0.date.compare($1.date) == .orderedDescending
+        })
+    }
 }
 
 extension ViewController : WriteDiaryViewDelegate {
     func didSelectRegister(diary: Diary) {
         self.diaryList.append(diary)
+        
+        self.diaryList = self.diaryList.sorted(by: {
+            $0.date.compare($1.date) == .orderedDescending
+        })
+        
         self.collectionView.reloadData()
     }
 }
