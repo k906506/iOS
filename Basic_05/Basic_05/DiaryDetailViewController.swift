@@ -9,6 +9,7 @@ import UIKit
 
 protocol DiaryDetailViewDelegate : AnyObject {
     func didSelectDelect(indexPath : IndexPath)
+    func didSelectStar(indexPath : IndexPath, isStar : Bool)
 }
 
 class DiaryDetailViewController: UIViewController {
@@ -16,6 +17,7 @@ class DiaryDetailViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contentsTextView : UITextView!
     @IBOutlet weak var dateLabel: UILabel!
+    var starButton: UIBarButtonItem?
     
     weak var delegate : DiaryDetailViewDelegate?
     
@@ -32,6 +34,10 @@ class DiaryDetailViewController: UIViewController {
         self.titleLabel.text = diary.title
         self.contentsTextView.text = diary.contents
         self.dateLabel.text = self.dateToString(date: diary.date)
+        self.starButton = UIBarButtonItem(image: nil, style: .plain, target: self, action: #selector(tapStarButton))
+        self.starButton?.image = diary.isStar ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
+        self.starButton?.tintColor = .orange
+        self.navigationItem.rightBarButtonItem = self.starButton
     }
     
     private func dateToString(date : Date) -> String {
@@ -57,9 +63,23 @@ class DiaryDetailViewController: UIViewController {
     
     @objc func editDiaryNotification(_ notification : Notification) {
         guard let diary = notification.object as? Diary else { return }
-        guard let row = notification.userInfo?["indexPath.row"] as? Int else { return }
+        // guard let row = notification.userInfo?["indexPath.row"] as? Int else { return }
         self.diary = diary
+        // self.indexPath?.row = row
         self.configureView()
+    }
+    
+    @objc func tapStarButton() {
+        guard let isStar = self.diary?.isStar else { return }
+        guard let indexPath = self.indexPath else { return }
+
+        if isStar {
+            self.starButton?.image = UIImage(systemName: "star")
+        } else {
+            self.starButton?.image = UIImage(systemName: "star.fill")
+        }
+        self.diary?.isStar = !isStar
+        self.delegate?.didSelectStar(indexPath: indexPath, isStar: self.diary?.isStar ?? false)
     }
     
     @IBAction func tapDeleteButton(_ sender: UIButton) {
