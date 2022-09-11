@@ -7,10 +7,10 @@
 
 import UIKit
 
-protocol DiaryDetailViewDelegate : AnyObject {
-    func didSelectDelect(indexPath : IndexPath)
-    func didSelectStar(indexPath : IndexPath, isStar : Bool)
-}
+//protocol DiaryDetailViewDelegate : AnyObject {
+//    func didSelectDelect(indexPath : IndexPath)
+//    func didSelectStar(indexPath : IndexPath, isStar : Bool)
+//}
 
 class DiaryDetailViewController: UIViewController {
     
@@ -19,7 +19,7 @@ class DiaryDetailViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     var starButton: UIBarButtonItem?
     
-    weak var delegate : DiaryDetailViewDelegate?
+    // weak var delegate : DiaryDetailViewDelegate?
     
     var diary : Diary?
     var indexPath : IndexPath?
@@ -79,12 +79,23 @@ class DiaryDetailViewController: UIViewController {
             self.starButton?.image = UIImage(systemName: "star.fill")
         }
         self.diary?.isStar = !isStar
-        self.delegate?.didSelectStar(indexPath: indexPath, isStar: self.diary?.isStar ?? false)
+        //self.delegate?.didSelectStar(indexPath: indexPath, isStar: self.diary?.isStar ?? false)
+        NotificationCenter.default.post(
+            name: NSNotification.Name("starDiary"),
+            object: [
+            "isStar" : self.diary?.isStar ?? false,
+            "indexPath" : indexPath
+        ],
+        userInfo: nil)
     }
     
     @IBAction func tapDeleteButton(_ sender: UIButton) {
         guard let indexPath = self.indexPath else { return }
-        self.delegate?.didSelectDelect(indexPath: indexPath)
+        NotificationCenter.default.post(
+            name: NSNotification.Name("deleteDiary"),
+            object: indexPath,
+            userInfo: nil)
+        // self.delegate?.didSelectDelect(indexPath: indexPath)
         self.navigationController?.popViewController(animated: true)
     }
     
