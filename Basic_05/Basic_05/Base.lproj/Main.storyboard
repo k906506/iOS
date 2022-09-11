@@ -35,14 +35,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8U-Dt-w3o">
-                                                    <rect key="frame" x="12" y="12" width="156" height="143"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="12" y="12" width="156" height="144.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0AQ-kR-TJg">
-                                                    <rect key="frame" x="12" y="167" width="156" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <rect key="frame" x="12" y="168.5" width="156" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -59,8 +59,8 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="180" height="200"/>
                                         <connections>
-                                            <outlet property="dateLabel" destination="0AQ-kR-TJg" id="4uc-9G-4fj"/>
-                                            <outlet property="titleLabel" destination="0AQ-kR-TJg" id="XAt-FT-6l0"/>
+                                            <outlet property="dateLabel" destination="0AQ-kR-TJg" id="wQb-Il-XHt"/>
+                                            <outlet property="titleLabel" destination="u8U-Dt-w3o" id="6cR-hG-Mrv"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -194,6 +194,10 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="414" height="80"/>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="4dH-Ab-WWI" id="lzf-5X-LbW"/>
+                                            <outlet property="titleLabel" destination="2bn-Av-9uC" id="b2M-xz-Kxg"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -208,6 +212,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ACe-NN-hEW"/>
+                    <connections>
+                        <outlet property="starCollectionView" destination="gnQ-QJ-yt1" id="YrN-pz-znA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jTI-dU-jlK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -216,7 +223,7 @@
         <!--일기 작성-->
         <scene sceneID="00H-ip-Dqe">
             <objects>
-                <viewController id="I9a-Xq-Mt7" customClass="WriteDiaryViewController" customModule="Basic_05" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WriteDiaryViewController" id="I9a-Xq-Mt7" customClass="WriteDiaryViewController" customModule="Basic_05" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cRo-aw-Hc9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -304,7 +311,7 @@
         <!--Diary Detail View Controller-->
         <scene sceneID="63K-zP-JDg">
             <objects>
-                <viewController id="cxb-c0-brH" customClass="DiaryDetailViewController" customModule="Basic_05" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DiaryDetailViewController" id="cxb-c0-brH" customClass="DiaryDetailViewController" customModule="Basic_05" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wQo-Zz-6GM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -366,6 +373,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="48.5" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="수정"/>
+                                        <connections>
+                                            <action selector="tapEditButton:" destination="cxb-c0-brH" eventType="touchUpInside" id="eqs-Nj-SLP"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyc-PN-cOG">
                                         <rect key="frame" x="98.5" y="0.0" width="48.5" height="31"/>
@@ -373,6 +383,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="삭제">
                                             <color key="baseForegroundColor" systemColor="systemRedColor"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="tapDeleteButton:" destination="cxb-c0-brH" eventType="touchUpInside" id="N5E-nY-mW2"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -396,6 +409,11 @@
                             <constraint firstItem="eKU-hf-ITd" firstAttribute="top" secondItem="ylh-77-WOh" secondAttribute="bottom" constant="24" id="tye-fM-qtu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="contentsTextView" destination="9kL-gS-IBq" id="gKq-rn-EMA"/>
+                        <outlet property="dateLabel" destination="5bc-EN-4Vy" id="fAZ-Jo-Wxm"/>
+                        <outlet property="titleLabel" destination="uU6-3S-TeR" id="Pvi-rO-fwx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T4L-CO-2h4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
