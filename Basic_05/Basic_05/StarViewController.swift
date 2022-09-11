@@ -16,11 +16,25 @@ class StarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureCollectionView()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         self.loadStarDiaryList()
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(editDiaryNotification(_:)),
+            name: NSNotification.Name("editDiary"),
+            object: nil
+        )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(editDiaryNotification(_:)),
+            name: NSNotification.Name("starDiary"),
+            object: nil
+        )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(editDiaryNotification(_:)),
+            name: NSNotification.Name("deleteDiary"),
+            object: nil
+        )
     }
     
     private func loadStarDiaryList() {
@@ -53,6 +67,39 @@ class StarViewController: UIViewController {
         formatter.dateFormat = "yy년 MM월 dd일(EEEEE)"
         formatter.locale = Locale(identifier: "ko_KR")
         return formatter.string(from: date)
+    }
+    
+    @objc func editDiaryNotification(_ notification : Notification) {
+        guard let diary = notification.object as? Diary else { return }
+        guard let row = notification.userInfo?["indexPath.row"] as? Int else { return }
+        self.diaryList[row] = diary
+        self.diaryList = self.diaryList.sorted(by: {
+            $0.date.compare($1.date) == .orderedDescending
+        })
+        self.starCollectionView.reloadData()
+    }
+    
+    @objc func starDiaryNotification(_ notification: Notification) {
+        guard let starDiary = notification.object as? [String: Any] else { return }
+        guard let diary = starDiary["diary"] as? Diary else { return }
+        guard let isStar = starDiary["isStar"] as? Bool else { return }
+        guard let indexPath = starDiary["indexPath"] as? IndexPath else { return }
+        if isStar {
+            self.diaryList.append(diary)
+            self.diaryList = self.diaryList.sorted(by: {
+                $0.date.compare($1.date) == .orderedDescending
+            })
+            self.starCollectionView.reloadData()
+        } else {
+            self.diaryList.remove(at: indexPath.row)
+            self.starCollectionView.deleteItems(at: [indexPath])
+        }
+    }
+    
+    @objc func deleteDiaryNotification(_ notification: Notification) {
+        guard let indexPath = notification.object as? IndexPath else { return }
+        self.diaryList.remove(at: indexPath.row)
+        self.starCollectionView.deleteItems(at: [indexPath])
     }
 }
 

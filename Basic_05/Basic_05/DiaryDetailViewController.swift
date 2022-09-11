@@ -83,8 +83,9 @@ class DiaryDetailViewController: UIViewController {
         NotificationCenter.default.post(
             name: NSNotification.Name("starDiary"),
             object: [
-            "isStar" : self.diary?.isStar ?? false,
-            "indexPath" : indexPath
+                "diary" : self.diary,
+                "isStar" : self.diary?.isStar ?? false,
+                "indexPath" : indexPath
         ],
         userInfo: nil)
     }
