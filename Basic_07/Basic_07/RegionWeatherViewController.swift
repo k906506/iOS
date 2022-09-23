@@ -16,6 +16,8 @@ class RegionWeatherViewController : UIViewController {
     @IBOutlet weak var o3TextLabel: UILabel!
     @IBOutlet weak var no2TextLabel: UILabel!
     @IBOutlet weak var timeTextLabel: UILabel!
+    @IBOutlet weak var infoStackView: UIStackView!
+    @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     
     var pm10: String = ""
     var pm25: String = ""
@@ -27,10 +29,22 @@ class RegionWeatherViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.bringSubviewToFront(self.indicatorView)
+        
+        // self.showAndDismissView(state: true)
         self.getData(stationName: stationName)
+        self.showAndDismissView(state: false)
+    }
+    
+    func showAndDismissView(state: Bool) {
+        self.stationNameTextLabel.isHidden = state
+        self.infoStackView.isHidden = state
+        self.timeTextLabel.isHidden = state
     }
     
     func getData(stationName: String) {
+        self.indicatorView.startAnimating()
+        
         let apiKey: String = "DlsG82zYpBjL3dL6XB52XaI9n%2FLX37nb5v%2BjUrn9IxLT%2Fe78qeC6ChO9heFQeJwv%2BpclYR8ux0Q4e1stnKHE2Q%3D%3D"
         let session: URLSession = URLSession(configuration: .default)
         let addr: String =      "https://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty?serviceKey=\(apiKey)&returnType=json&numOfRows=1&pageNo=1&stationName=\(stationName)&dataTerm=DAILY&ver=1.0"
@@ -48,7 +62,7 @@ class RegionWeatherViewController : UIViewController {
                 do {
                     let userResponse = try JSONDecoder().decode(UserWeatherResponse.self, from: data)
                     let data = userResponse.response.body.items[0]
-                
+                    
                     DispatchQueue.main.async {
                         self.stationNameTextLabel.text = stationName
                         self.pm10TextLabel.text = data.pm10Value
@@ -56,6 +70,9 @@ class RegionWeatherViewController : UIViewController {
                         self.o3TextLabel.text = data.o3Value
                         self.no2TextLabel.text = data.no2Value
                         self.timeTextLabel.text = data.dataTime
+                        
+                        self.indicatorView.stopAnimating()
+                        self.indicatorView.isHidden = true
                     }
                 } catch(let error) {
                     print(String(describing: error))
