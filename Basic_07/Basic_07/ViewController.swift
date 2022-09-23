@@ -8,12 +8,16 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var cityNameTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
+    
+    @IBAction func tapFindButton(_ sender: UIButton) {
+        guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "RegionTableViewController") as? RegionTableViewController else { return }
+        viewController.city = self.cityNameTextField.text ?? "대전"
+        
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
 }
-
