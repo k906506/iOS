@@ -1,0 +1,13 @@
+# CocoaPods
+Pods
+!Podfile
+!Podfile.lock
+
+# Xcode
+*.xcworkspace
+!default.xcworkspace
+.idea/
+.DS_Store
+profile
+xcuserdata
+DerivedData
