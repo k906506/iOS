@@ -15,20 +15,27 @@ class ViewController: UIViewController {
     @IBOutlet weak var pieChartView: PieChartView!
     @IBOutlet weak var newCaseLabel: UILabel!
     @IBOutlet weak var totalCaseLabel: UILabel!
+    @IBOutlet weak var indicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var labelStackView: UIStackView!
     
     let apiKey = "AT7mruCLHQV8geJZRN6fx1zwIUdbiYapc"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.indicatorView.startAnimating()
         self.fetchCovidOverview(completionHandler: { [weak self] result in
             guard let self = self else { return } // self에 대한 옵셔널 바인딩
-            
+       
             switch result {
             case let.success(result):
-                debugPrint(result)
                 self.configureStackView(koreaCovidOverview: result.korea)
                 let covidOverviewList = self.makeCovidOverviewList(cityCovidOverview: result)
                 self.configureChartView(covidOverviewList: covidOverviewList)
+                
+                self.indicatorView.stopAnimating()
+                self.indicatorView.isHidden = true
+                self.labelStackView.isHidden = false
+                self.pieChartView.isHidden = false
                 
             case let.failure(error):
                 debugPrint("error \(error)")
@@ -66,7 +73,7 @@ class ViewController: UIViewController {
             .compactMap { [weak self] overview -> PieChartDataEntry? in
                 guard let self = self else { return nil }
                 return PieChartDataEntry(
-                    value: self.removeFormatString(string: "\(overview.incDecK)"),
+                    value: self.removeFormatString(string: "\(overview.incDec)"),
                     label: overview.countryNm,
                     data: overview
                 )
@@ -98,7 +105,7 @@ class ViewController: UIViewController {
     
     func configureStackView(koreaCovidOverview: CovidOverview) {
         self.totalCaseLabel.text = "\(koreaCovidOverview.totalCnt)명"
-        self.newCaseLabel.text = "\(koreaCovidOverview.incDecK)명"
+        self.newCaseLabel.text = "\(koreaCovidOverview.incDec)명"
     }
     
     func fetchCovidOverview (
