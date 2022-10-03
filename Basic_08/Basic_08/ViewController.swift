@@ -59,16 +59,18 @@ class ViewController: UIViewController {
     }
     
     func configureChartView(covidOverviewList: [CovidOverview]) -> Void {
+        self.pieChartView.delegate = self
+        
         let entries = covidOverviewList
             .sorted(by: { $0.incDecK > $1.incDecK})
             .compactMap { [weak self] overview -> PieChartDataEntry? in
-            guard let self = self else { return nil }
-            return PieChartDataEntry(
-                value: self.removeFormatString(string: "\(overview.incDecK)"),
-                label: overview.countryNm,
-                data: overview
-            )
-        }
+                guard let self = self else { return nil }
+                return PieChartDataEntry(
+                    value: self.removeFormatString(string: "\(overview.incDecK)"),
+                    label: overview.countryNm,
+                    data: overview
+                )
+            }
         
         let dataSet = PieChartDataSet(entries: entries, label: "코로나 발생 현황")
         dataSet.sliceSpace = 1
@@ -122,7 +124,14 @@ class ViewController: UIViewController {
                     completionHandler(.failure(error))
                 }
             })
-        
     }
 }
 
+extension ViewController: ChartViewDelegate {
+    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+        guard let covidDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "CovidDetailTableViewController") as? CovidDetailTableViewController else { return }
+        guard let covidOverView = entry.data as? CovidOverview else { return }
+        covidDetailViewController.covidOverView = covidOverView
+        self.navigationController?.pushViewController(covidDetailViewController, animated: true)
+    }
+}
