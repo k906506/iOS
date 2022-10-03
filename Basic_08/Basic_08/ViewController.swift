@@ -18,14 +18,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     @IBOutlet weak var labelStackView: UIStackView!
     
-    let apiKey = "AT7mruCLHQV8geJZRN6fx1zwIUdbiYapc"
+    let apiKey = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.indicatorView.startAnimating()
         self.fetchCovidOverview(completionHandler: { [weak self] result in
             guard let self = self else { return } // self에 대한 옵셔널 바인딩
-       
+            
             switch result {
             case let.success(result):
                 self.configureStackView(koreaCovidOverview: result.korea)
@@ -36,6 +36,19 @@ class ViewController: UIViewController {
                 self.indicatorView.isHidden = true
                 self.labelStackView.isHidden = false
                 self.pieChartView.isHidden = false
+                
+//                URLSession으로 API를 호출할 때의 코드, fetchCovidOverviewToURLSession 함수로 변경해줄 것!
+//
+//                DispatchQueue.main.async {
+//                    self.configureStackView(koreaCovidOverview: result.korea)
+//                    let covidOverviewList = self.makeCovidOverviewList(cityCovidOverview: result)
+//                    self.configureChartView(covidOverviewList: covidOverviewList)
+//
+//                    self.indicatorView.stopAnimating()
+//                    self.indicatorView.isHidden = true
+//                    self.labelStackView.isHidden = false
+//                    self.pieChartView.isHidden = false
+//                }
                 
             case let.failure(error):
                 debugPrint("error \(error)")
@@ -132,6 +145,33 @@ class ViewController: UIViewController {
                 }
             })
     }
+    
+//    URLSession으로 API를 호출할 때의 코드
+//
+//    func fetchCovidOverviewToURLSession(
+//        completionHandler: @escaping (Result<CityCovidOverview, Error>) -> Void
+//    ) {
+//        let session: URLSession = URLSession(configuration: .default)
+//        let baseURL: String = "https://api.corona-19.kr/korea/beta/?serviceKey=\(apiKey)"
+//
+//        guard let url: URL = URL(string: baseURL) else { return }
+//
+//        session.dataTask(with: url) { data, response, error in
+//            if let error {
+//                completionHandler(.failure(error))
+//            }
+//
+//            if let data = data {
+//                do {
+//                    let result = try JSONDecoder().decode(CityCovidOverview.self, from: data)
+//                    debugPrint(result)
+//                    completionHandler(.success(result))
+//                } catch(let error) {
+//                    completionHandler(.failure(error))
+//                }
+//            }
+//        }.resume()
+//    }
 }
 
 extension ViewController: ChartViewDelegate {
