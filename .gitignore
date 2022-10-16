@@ -11,3 +11,6 @@ Pods
 profile
 xcuserdata
 DerivedData
+
+# Firebase
+.plist
