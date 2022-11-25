@@ -30,6 +30,11 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func tapLogoutButton(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
+        do {
+            try Auth.auth().signOut()
+            self.navigationController?.popViewController(animated: true)
+        } catch let signOutError as NSError {
+            print("\(signOutError.localizedDescription)")
+        }
     }
 }
