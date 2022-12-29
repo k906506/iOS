@@ -14,6 +14,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         FirebaseApp.configure()
+        
+        // MARK: - 토큰 확인용
+        Installations.installations().authTokenForcingRefresh(true) { result, error in
+            if let error {
+                print("Error")
+                return
+            }
+            
+            guard let result else { return }
+            print("Installation auth token : \(result.authToken)")
+        }
         return true
     }
 
