@@ -13,6 +13,8 @@
 		C0D4BDB92959B524002A0083 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0D4BDB72959B524002A0083 /* Main.storyboard */; };
 		C0D4BDBB2959B525002A0083 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0D4BDBA2959B525002A0083 /* Assets.xcassets */; };
 		C0D4BDBE2959B525002A0083 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0D4BDBC2959B525002A0083 /* LaunchScreen.storyboard */; };
+		C0D4BDC72959B5CC002A0083 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4BDC52959B5CC002A0083 /* NoticeViewController.swift */; };
+		C0D4BDC82959B5CC002A0083 /* NoticeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0D4BDC62959B5CC002A0083 /* NoticeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		C0D4BDBA2959B525002A0083 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0D4BDBD2959B525002A0083 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C0D4BDBF2959B525002A0083 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0D4BDC52959B5CC002A0083 /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
+		C0D4BDC62959B5CC002A0083 /* NoticeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoticeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				C0D4BDBA2959B525002A0083 /* Assets.xcassets */,
 				C0D4BDBC2959B525002A0083 /* LaunchScreen.storyboard */,
 				C0D4BDBF2959B525002A0083 /* Info.plist */,
+				C0D4BDC52959B5CC002A0083 /* NoticeViewController.swift */,
+				C0D4BDC62959B5CC002A0083 /* NoticeViewController.xib */,
 			);
 			path = Intermediate_03;
 			sourceTree = "<group>";
@@ -127,6 +133,7 @@
 			files = (
 				C0D4BDBE2959B525002A0083 /* LaunchScreen.storyboard in Resources */,
 				C0D4BDBB2959B525002A0083 /* Assets.xcassets in Resources */,
+				C0D4BDC82959B5CC002A0083 /* NoticeViewController.xib in Resources */,
 				C0D4BDB92959B524002A0083 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,6 +147,7 @@
 			files = (
 				C0D4BDB62959B524002A0083 /* ViewController.swift in Sources */,
 				C0D4BDB22959B524002A0083 /* AppDelegate.swift in Sources */,
+				C0D4BDC72959B5CC002A0083 /* NoticeViewController.swift in Sources */,
 				C0D4BDB42959B524002A0083 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
