@@ -11,6 +11,7 @@ Pods
 profile
 xcuserdata
 DerivedData
+./GoogleService-info.plist
 
 # Firebase
 .plist
