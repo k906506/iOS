@@ -30,6 +30,9 @@
                     </label>
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1sK-c5-Q32">
                         <rect key="frame" x="251" y="6.6666666666666679" width="51" height="31.000000000000004"/>
+                        <connections>
+                            <action selector="alertSwitchValueChanged:" destination="KGk-i7-Jjw" eventType="valueChanged" id="4NR-Rc-AfA"/>
+                        </connections>
                     </switch>
                 </subviews>
                 <constraints>
@@ -43,7 +46,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="alertSwitch" destination="1sK-c5-Q32" id="NyX-Dq-71d"/>
+                <outlet property="alertSwitch" destination="1sK-c5-Q32" id="L99-Ds-zAN"/>
                 <outlet property="meridiemLabel" destination="PNv-j4-JE8" id="J9F-ma-g95"/>
                 <outlet property="timeLabel" destination="rWY-6X-obP" id="bUk-8k-R92"/>
             </connections>

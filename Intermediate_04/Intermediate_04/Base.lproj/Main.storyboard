@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -33,7 +34,7 @@
                     <navigationItem key="navigationItem" title="물 마시기" id="Poh-gb-CnL">
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="n0l-U0-5Kg">
                             <connections>
-                                <action selector="tapAddAlert:" destination="nCc-wp-Sqq" id="IEN-fv-IL6"/>
+                                <action selector="tapAddAlertButton:" destination="nCc-wp-Sqq" id="hTH-gs-qCs"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -41,6 +42,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z6T-F6-uXD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-91" y="-250"/>
+        </scene>
+        <!--Add Alert View Controller-->
+        <scene sceneID="0MS-7a-Bni">
+            <objects>
+                <viewController storyboardIdentifier="AddAlertViewController" id="HkV-kw-uQO" customClass="AddAlertViewController" customModule="Intermediate_04" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5ho-Wc-zbE">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Px9-6G-GEA">
+                                <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                                <items>
+                                    <navigationItem title="알람 추가" id="TLI-98-qab">
+                                        <barButtonItem key="leftBarButtonItem" title="취소" id="DS7-NX-9re">
+                                            <connections>
+                                                <action selector="tapDismissButton:" destination="HkV-kw-uQO" id="cqx-wh-jcx"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="저장" id="FNN-e2-9Rp">
+                                            <connections>
+                                                <action selector="tapSaveBuitton:" destination="HkV-kw-uQO" id="8M5-Xh-Ydt"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32m-ei-AlU">
+                                <rect key="frame" x="28" y="183" width="29.666666666666671" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Hzi-iY-mGD">
+                                <rect key="frame" x="165" y="183" width="200" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="aVl-Ua-GLd"/>
+                                    <constraint firstAttribute="width" constant="200" id="hAf-SJ-qZY"/>
+                                </constraints>
+                            </datePicker>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sE6-wT-ews"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Hzi-iY-mGD" firstAttribute="top" secondItem="Px9-6G-GEA" secondAttribute="bottom" constant="80" id="JIL-KF-VLH"/>
+                            <constraint firstItem="Px9-6G-GEA" firstAttribute="top" secondItem="sE6-wT-ews" secondAttribute="top" id="YBU-S7-cp2"/>
+                            <constraint firstItem="32m-ei-AlU" firstAttribute="top" secondItem="Px9-6G-GEA" secondAttribute="bottom" constant="80" id="bGJ-dQ-pgO"/>
+                            <constraint firstItem="Px9-6G-GEA" firstAttribute="leading" secondItem="sE6-wT-ews" secondAttribute="leading" id="ce4-Z7-YJF"/>
+                            <constraint firstItem="32m-ei-AlU" firstAttribute="centerY" secondItem="Hzi-iY-mGD" secondAttribute="centerY" id="cmo-2j-vfi"/>
+                            <constraint firstItem="Px9-6G-GEA" firstAttribute="trailing" secondItem="sE6-wT-ews" secondAttribute="trailing" id="hay-64-wXD"/>
+                            <constraint firstItem="32m-ei-AlU" firstAttribute="leading" secondItem="sE6-wT-ews" secondAttribute="leading" constant="28" id="lUW-LH-KXm"/>
+                            <constraint firstItem="sE6-wT-ews" firstAttribute="trailing" secondItem="Hzi-iY-mGD" secondAttribute="trailing" constant="28" id="yp6-Ls-g49"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="Hzi-iY-mGD" id="Ocy-Qr-GWZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Df-Uq-jNu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="591.60305343511448" y="-250"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5vR-hi-XYS">
