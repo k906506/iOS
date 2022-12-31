@@ -5,11 +5,12 @@
 //  Created by 고도 on 2022/12/30.
 //
 
-import Foundation
 import UIKit
+import UserNotifications
 
 class AlertListViewController: UITableViewController {
     var alertList: [Alert] = []
+    let userNotificationCenter = UNUserNotificationCenter.current()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,7 @@ class AlertListViewController: UITableViewController {
             self.tableView.reloadData()
             
             self.updateAlertList()
+            self.userNotificationCenter.addNotificationRequest(by: newAlert)
         }
         
         self.present(addAlertVC, animated: true, completion: nil)
@@ -95,8 +97,11 @@ extension AlertListViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
         case .delete:
+            userNotificationCenter.removePendingNotificationRequests(withIdentifiers: [self.alertList[indexPath.row].id])
+            
             self.alertList.remove(at: indexPath.row)
             UserDefaults.standard.set(try? PropertyListEncoder().encode(self.alertList), forKey: "alerts")
+            
             self.tableView.reloadData()
             
             return

@@ -11,7 +11,7 @@
 		C05F1EF4295E8F4800D2B8A0 /* AlertListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05F1EF2295E8F4800D2B8A0 /* AlertListCell.swift */; };
 		C05F1EF5295E8F4800D2B8A0 /* AlertListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C05F1EF3295E8F4800D2B8A0 /* AlertListCell.xib */; };
 		C05F1EF7295E918500D2B8A0 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05F1EF6295E918500D2B8A0 /* Alert.swift */; };
-		C08D48FD296026500035A01D /* UNNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08D48FC296026500035A01D /* UNNotificationCenter.swift */; };
+		C08D48FD296026500035A01D /* UNUserNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08D48FC296026500035A01D /* UNUserNotificationCenter.swift */; };
 		C0D4BE23295E8B75002A0083 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4BE22295E8B75002A0083 /* AppDelegate.swift */; };
 		C0D4BE25295E8B75002A0083 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4BE24295E8B75002A0083 /* SceneDelegate.swift */; };
 		C0D4BE2A295E8B75002A0083 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0D4BE28295E8B75002A0083 /* Main.storyboard */; };
@@ -25,7 +25,7 @@
 		C05F1EF2295E8F4800D2B8A0 /* AlertListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertListCell.swift; sourceTree = "<group>"; };
 		C05F1EF3295E8F4800D2B8A0 /* AlertListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertListCell.xib; sourceTree = "<group>"; };
 		C05F1EF6295E918500D2B8A0 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
-		C08D48FC296026500035A01D /* UNNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNNotificationCenter.swift; sourceTree = "<group>"; };
+		C08D48FC296026500035A01D /* UNUserNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNUserNotificationCenter.swift; sourceTree = "<group>"; };
 		C0D4BE1F295E8B75002A0083 /* Intermediate_04.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Intermediate_04.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0D4BE22295E8B75002A0083 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0D4BE24295E8B75002A0083 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,7 +77,7 @@
 				C05F1EF3295E8F4800D2B8A0 /* AlertListCell.xib */,
 				C05F1EF6295E918500D2B8A0 /* Alert.swift */,
 				C032C83C295FD2C400C5DAA9 /* AddAlertViewController.swift */,
-				C08D48FC296026500035A01D /* UNNotificationCenter.swift */,
+				C08D48FC296026500035A01D /* UNUserNotificationCenter.swift */,
 			);
 			path = Intermediate_04;
 			sourceTree = "<group>";
@@ -159,7 +159,7 @@
 				C05F1EF4295E8F4800D2B8A0 /* AlertListCell.swift in Sources */,
 				C05F1EF7295E918500D2B8A0 /* Alert.swift in Sources */,
 				C0D4BE37295E8DEB002A0083 /* AlertListViewController.swift in Sources */,
-				C08D48FD296026500035A01D /* UNNotificationCenter.swift in Sources */,
+				C08D48FD296026500035A01D /* UNUserNotificationCenter.swift in Sources */,
 				C032C83D295FD2C400C5DAA9 /* AddAlertViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
