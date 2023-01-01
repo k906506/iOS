@@ -16,6 +16,7 @@
 		C08D49462961B91F0035A01D /* Content.plist in Resources */ = {isa = PBXBuildFile; fileRef = C08D49452961B91F0035A01D /* Content.plist */; };
 		C08D49482961B9570035A01D /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08D49472961B9570035A01D /* Content.swift */; };
 		C08D494A2961D9E20035A01D /* ContentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08D49492961D9E20035A01D /* ContentCollectionViewCell.swift */; };
+		C08D494C2961DC5D0035A01D /* ContentCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08D494B2961DC5D0035A01D /* ContentCollectionViewHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		C08D49452961B91F0035A01D /* Content.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Content.plist; sourceTree = "<group>"; };
 		C08D49472961B9570035A01D /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		C08D49492961D9E20035A01D /* ContentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCollectionViewCell.swift; sourceTree = "<group>"; };
+		C08D494B2961DC5D0035A01D /* ContentCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCollectionViewHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				C08D49452961B91F0035A01D /* Content.plist */,
 				C08D49472961B9570035A01D /* Content.swift */,
 				C08D49492961D9E20035A01D /* ContentCollectionViewCell.swift */,
+				C08D494B2961DC5D0035A01D /* ContentCollectionViewHeader.swift */,
 			);
 			path = Intermediate_06;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C08D492D29615AD80035A01D /* AppDelegate.swift in Sources */,
+				C08D494C2961DC5D0035A01D /* ContentCollectionViewHeader.swift in Sources */,
 				C08D492F29615AD80035A01D /* SceneDelegate.swift in Sources */,
 				C08D49412961619C0035A01D /* HomeViewController.swift in Sources */,
 				C08D49482961B9570035A01D /* Content.swift in Sources */,
