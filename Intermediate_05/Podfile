@@ -1,0 +1,12 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Intermediate_05' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Intermediate_05
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Messaging'
+
+end
