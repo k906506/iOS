@@ -49,6 +49,8 @@ class HomeViewController: UICollectionViewController {
             switch self.contents[sectionNumber].sectionType {
             case .basic:
                 return self.createBasicTypeSection()
+            case .large:
+                return self.createLargeTypeSection()
             default:
                 return nil
             }
@@ -74,6 +76,27 @@ class HomeViewController: UICollectionViewController {
         return section
     }
     
+    // 큰 화면의 Section Layout 설정
+    private func createLargeTypeSection() -> NSCollectionLayoutSection {
+        // item
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3), heightDimension: .fractionalHeight(0.75))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = .init(top: 10, leading: 5, bottom: 0, trailing: 5)
+        // group
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension: .estimated(400))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 2)
+        // section
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .continuous
+        
+        let sectionHeader = self.createSectionHeader()
+        section.boundarySupplementaryItems = [sectionHeader]
+        section.contentInsets = .init(top: 0, leading: 5, bottom: 0, trailing: 5)
+        
+        return section
+    }
+    
+    
     // SectionHeader Layout 설정
     private func createSectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
         // Section Header Size
@@ -88,11 +111,13 @@ class HomeViewController: UICollectionViewController {
 
 extension HomeViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return 1
-        default:
-            return contents[section].contentItem.count
+        if contents[section].sectionType == .basic || contents[section].sectionType == .large {
+            switch section {
+            case 0:
+                return 1
+            default:
+                return contents[section].contentItem.count
+            }
         }
     }
     
@@ -131,21 +156,21 @@ extension HomeViewController {
     }
 }
 
-//struct HomeViewController_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Container().edgesIgnoringSafeArea(.all)
-//    }
-//
-//    struct Container: UIViewControllerRepresentable {
-//        func makeUIViewController(context: Context) -> UIViewController {
-//            let layout = UICollectionViewLayout()
-//            let homeViewController = HomeViewController(collectionViewLayout: layout)
-//
-//            return UINavigationController(rootViewController: homeViewController)
-//        }
-//
-//        func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) { }
-//
-//        typealias UIViewControllerType = UIViewController
-//    }
-//}
+struct HomeViewController_Previews: PreviewProvider {
+    static var previews: some View {
+        Container().edgesIgnoringSafeArea(.all)
+    }
+
+    struct Container: UIViewControllerRepresentable {
+        func makeUIViewController(context: Context) -> UIViewController {
+            let layout = UICollectionViewLayout()
+            let homeViewController = HomeViewController(collectionViewLayout: layout)
+
+            return UINavigationController(rootViewController: homeViewController)
+        }
+
+        func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) { }
+
+        typealias UIViewControllerType = UIViewController
+    }
+}
