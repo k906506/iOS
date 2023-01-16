@@ -10,6 +10,7 @@ import UIKit
 class BaseListViewController: UITableViewController {
     var beerList: [Beer] = []
     var currentPage = 1
+    var dataTasks = [URLSessionDataTask]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,12 +22,13 @@ class BaseListViewController: UITableViewController {
         // UITableView Set
         tableView.register(BeerListCell.self, forCellReuseIdentifier: "BeerListCell")
         tableView.rowHeight = 150
+        tableView.prefetchDataSource = self
         
         fetchBeer(of: currentPage)
     }
 }
 
-extension BaseListViewController {
+extension BaseListViewController: UITableViewDataSourcePrefetching {
     // 하나의 섹션에 보여줄 아이템의 개수
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return beerList.count
@@ -49,12 +51,23 @@ extension BaseListViewController {
         beerDetailViewController.beer = selectedBeer
         self.show(beerDetailViewController.self, sender: self)
     }
+    
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        guard currentPage != 1 else { return }
+        indexPaths.forEach {
+            if ($0.row + 1) / 25 + 1 == currentPage {
+                self.fetchBeer(of: currentPage)
+            }
+        }
+    }
 }
 
 // Data Fetching
 private extension BaseListViewController {
     func fetchBeer(of page: Int) {
-        guard let url = URL(string: "https://api.punkapi.com/v2/beers?page=\(page)") else { return }
+        guard let url = URL(string: "https://api.punkapi.com/v2/beers?page=\(page)"),
+              dataTasks.firstIndex(where: { $0.originalRequest?.url == url }) == nil // 이미 요청한 Task이면
+        else { return }
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -95,5 +108,6 @@ private extension BaseListViewController {
         }
         
         dataTask.resume()
+        // dataTasks.append(dataTask)
     }
 }
