@@ -19,12 +19,12 @@ struct AssetBannerView: View {
     var body: some View {
         let bannerCards = bannerList.map { BannerCard(banner: $0) }
         
-        ZStack(alignment: .bottomTrailing) {
+        ZStack(alignment: .bottom) {
             PageViewController(pages: bannerCards, currentPage: $currentPage)
             
             PageControl(numberOfPages: bannerCards.count, currentPage: $currentPage)
                 .frame(width: CGFloat(bannerCards.count * 10))
-                .padding(.trailing)
+                .padding(8)
         }
     }
 }
