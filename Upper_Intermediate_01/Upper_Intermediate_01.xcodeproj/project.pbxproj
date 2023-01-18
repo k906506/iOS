@@ -11,15 +11,6 @@
 		C0E6DC5E2978177000FE7E3E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E6DC5D2978177000FE7E3E /* ContentView.swift */; };
 		C0E6DC602978177100FE7E3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0E6DC5F2978177100FE7E3E /* Assets.xcassets */; };
 		C0E6DC632978177100FE7E3E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0E6DC622978177100FE7E3E /* Preview Assets.xcassets */; };
-		C0E6DC6B29781B5400FE7E3E /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E6DC6A29781B5400FE7E3E /* Modifiers.swift */; };
-		C0E6DC6D2978208500FE7E3E /* AssetMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E6DC6C2978208500FE7E3E /* AssetMenu.swift */; };
-		C0F7E17D2978232A00AF3553 /* AssetMenuGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F7E17C2978232A00AF3553 /* AssetMenuGridView.swift */; };
-		C0F7E17F2978242E00AF3553 /* AssetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F7E17E2978242E00AF3553 /* AssetView.swift */; };
-		C0F7E182297825E900AF3553 /* AssetBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F7E181297825E900AF3553 /* AssetBanner.swift */; };
-		C0F7E1862978262B00AF3553 /* BannerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F7E1852978262B00AF3553 /* BannerCard.swift */; };
-		C0F7E18829782DB400AF3553 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F7E18729782DB400AF3553 /* PageViewController.swift */; };
-		C0F7E18A297830EE00AF3553 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F7E189297830EE00AF3553 /* PageControl.swift */; };
-		C0F7E18C2978326A00AF3553 /* AssetBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F7E18B2978326A00AF3553 /* AssetBannerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,15 +19,6 @@
 		C0E6DC5D2978177000FE7E3E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C0E6DC5F2978177100FE7E3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0E6DC622978177100FE7E3E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		C0E6DC6A29781B5400FE7E3E /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
-		C0E6DC6C2978208500FE7E3E /* AssetMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetMenu.swift; sourceTree = "<group>"; };
-		C0F7E17C2978232A00AF3553 /* AssetMenuGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetMenuGridView.swift; sourceTree = "<group>"; };
-		C0F7E17E2978242E00AF3553 /* AssetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetView.swift; sourceTree = "<group>"; };
-		C0F7E181297825E900AF3553 /* AssetBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetBanner.swift; sourceTree = "<group>"; };
-		C0F7E1852978262B00AF3553 /* BannerCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCard.swift; sourceTree = "<group>"; };
-		C0F7E18729782DB400AF3553 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
-		C0F7E189297830EE00AF3553 /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
-		C0F7E18B2978326A00AF3553 /* AssetBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetBannerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,9 +51,6 @@
 		C0E6DC5A2978177000FE7E3E /* Upper_Intermediate_01 */ = {
 			isa = PBXGroup;
 			children = (
-				C0F7E183297825F400AF3553 /* Entity */,
-				C0F7E1842978261700AF3553 /* View */,
-				C0E6DC6929781B4300FE7E3E /* modifiers */,
 				C0E6DC5B2978177000FE7E3E /* Upper_Intermediate_01App.swift */,
 				C0E6DC5D2978177000FE7E3E /* ContentView.swift */,
 				C0E6DC5F2978177100FE7E3E /* Assets.xcassets */,
@@ -86,60 +65,6 @@
 				C0E6DC622978177100FE7E3E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		C0E6DC6929781B4300FE7E3E /* modifiers */ = {
-			isa = PBXGroup;
-			children = (
-				C0E6DC6A29781B5400FE7E3E /* Modifiers.swift */,
-			);
-			path = modifiers;
-			sourceTree = "<group>";
-		};
-		C0F7E1802978252900AF3553 /* Asset */ = {
-			isa = PBXGroup;
-			children = (
-				C0F7E18E297833C400AF3553 /* AssetBanner */,
-				C0F7E18D297833BD00AF3553 /* AssetMenu */,
-				C0F7E17E2978242E00AF3553 /* AssetView.swift */,
-			);
-			path = Asset;
-			sourceTree = "<group>";
-		};
-		C0F7E183297825F400AF3553 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				C0E6DC6C2978208500FE7E3E /* AssetMenu.swift */,
-				C0F7E181297825E900AF3553 /* AssetBanner.swift */,
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
-		C0F7E1842978261700AF3553 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				C0F7E1802978252900AF3553 /* Asset */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		C0F7E18D297833BD00AF3553 /* AssetMenu */ = {
-			isa = PBXGroup;
-			children = (
-				C0F7E17C2978232A00AF3553 /* AssetMenuGridView.swift */,
-			);
-			path = AssetMenu;
-			sourceTree = "<group>";
-		};
-		C0F7E18E297833C400AF3553 /* AssetBanner */ = {
-			isa = PBXGroup;
-			children = (
-				C0F7E18B2978326A00AF3553 /* AssetBannerView.swift */,
-				C0F7E1852978262B00AF3553 /* BannerCard.swift */,
-				C0F7E18729782DB400AF3553 /* PageViewController.swift */,
-				C0F7E189297830EE00AF3553 /* PageControl.swift */,
-			);
-			path = AssetBanner;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,17 +137,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0F7E18A297830EE00AF3553 /* PageControl.swift in Sources */,
-				C0F7E17D2978232A00AF3553 /* AssetMenuGridView.swift in Sources */,
 				C0E6DC5E2978177000FE7E3E /* ContentView.swift in Sources */,
-				C0E6DC6B29781B5400FE7E3E /* Modifiers.swift in Sources */,
-				C0F7E1862978262B00AF3553 /* BannerCard.swift in Sources */,
 				C0E6DC5C2978177000FE7E3E /* Upper_Intermediate_01App.swift in Sources */,
-				C0E6DC6D2978208500FE7E3E /* AssetMenu.swift in Sources */,
-				C0F7E18829782DB400AF3553 /* PageViewController.swift in Sources */,
-				C0F7E17F2978242E00AF3553 /* AssetView.swift in Sources */,
-				C0F7E182297825E900AF3553 /* AssetBanner.swift in Sources */,
-				C0F7E18C2978326A00AF3553 /* AssetBannerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,7 +275,6 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -389,7 +304,6 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
