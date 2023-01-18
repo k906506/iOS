@@ -14,6 +14,10 @@ struct AssetView: View {
                 VStack {
                     Spacer()
                     AssetMenuGridView()
+                    AssetBannerView()
+                        .aspectRatio(2.5, contentMode: .fit)
+                    
+                    AssetSectionView()
                 }
             }
             .navigationBarWithButtonStyle("내 자산")

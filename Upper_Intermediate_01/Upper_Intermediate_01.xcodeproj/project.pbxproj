@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C055C74329784752008B48CE /* AssetSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C055C74229784752008B48CE /* AssetSectionView.swift */; };
 		C0E6DC5C2978177000FE7E3E /* Upper_Intermediate_01App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E6DC5B2978177000FE7E3E /* Upper_Intermediate_01App.swift */; };
 		C0E6DC5E2978177000FE7E3E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E6DC5D2978177000FE7E3E /* ContentView.swift */; };
 		C0E6DC602978177100FE7E3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0E6DC5F2978177100FE7E3E /* Assets.xcassets */; };
@@ -20,9 +21,13 @@
 		C0F7E1A4297837A000AF3553 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F7E19B2978379F00AF3553 /* PageControl.swift */; };
 		C0F7E1A5297837A000AF3553 /* BannerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F7E19C2978379F00AF3553 /* BannerCard.swift */; };
 		C0F7E1A6297837A000AF3553 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F7E19D2978379F00AF3553 /* PageViewController.swift */; };
+		C0F7E1A82978440100AF3553 /* assets.json in Resources */ = {isa = PBXBuildFile; fileRef = C0F7E1A72978440100AF3553 /* assets.json */; };
+		C0F7E1AA2978441F00AF3553 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F7E1A92978441F00AF3553 /* Asset.swift */; };
+		C0F7E1AC2978451700AF3553 /* AssetStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F7E1AB2978451700AF3553 /* AssetStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C055C74229784752008B48CE /* AssetSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetSectionView.swift; sourceTree = "<group>"; };
 		C0E6DC582978177000FE7E3E /* Upper_Intermediate_01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Upper_Intermediate_01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E6DC5B2978177000FE7E3E /* Upper_Intermediate_01App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Upper_Intermediate_01App.swift; sourceTree = "<group>"; };
 		C0E6DC5D2978177000FE7E3E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -37,6 +42,9 @@
 		C0F7E19B2978379F00AF3553 /* PageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
 		C0F7E19C2978379F00AF3553 /* BannerCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerCard.swift; sourceTree = "<group>"; };
 		C0F7E19D2978379F00AF3553 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		C0F7E1A72978440100AF3553 /* assets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = assets.json; sourceTree = "<group>"; };
+		C0F7E1A92978441F00AF3553 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		C0F7E1AB2978451700AF3553 /* AssetStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +58,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C055C74429784E4A008B48CE /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				C0F7E1AB2978451700AF3553 /* AssetStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		C055C74529784E57008B48CE /* AssetSection */ = {
+			isa = PBXGroup;
+			children = (
+				C055C74229784752008B48CE /* AssetSectionView.swift */,
+			);
+			path = AssetSection;
+			sourceTree = "<group>";
+		};
 		C0E6DC4F2978177000FE7E3E = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +99,7 @@
 				C0E6DC5B2978177000FE7E3E /* Upper_Intermediate_01App.swift */,
 				C0E6DC5D2978177000FE7E3E /* ContentView.swift */,
 				C0E6DC5F2978177100FE7E3E /* Assets.xcassets */,
+				C0F7E1A72978440100AF3553 /* assets.json */,
 				C0E6DC612978177100FE7E3E /* Preview Content */,
 			);
 			path = Upper_Intermediate_01;
@@ -93,6 +118,7 @@
 			children = (
 				C0F7E1902978379F00AF3553 /* AssetBanner.swift */,
 				C0F7E1912978379F00AF3553 /* AssetMenu.swift */,
+				C0F7E1A92978441F00AF3553 /* Asset.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -109,6 +135,7 @@
 		C0F7E1942978379F00AF3553 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C055C74429784E4A008B48CE /* Store */,
 				C0F7E1952978379F00AF3553 /* Asset */,
 			);
 			path = View;
@@ -117,8 +144,9 @@
 		C0F7E1952978379F00AF3553 /* Asset */ = {
 			isa = PBXGroup;
 			children = (
-				C0F7E1962978379F00AF3553 /* AssetMenu */,
 				C0F7E1982978379F00AF3553 /* AssetView.swift */,
+				C055C74529784E57008B48CE /* AssetSection */,
+				C0F7E1962978379F00AF3553 /* AssetMenu */,
 				C0F7E1992978379F00AF3553 /* AssetBanner */,
 			);
 			path = Asset;
@@ -201,6 +229,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0F7E1A82978440100AF3553 /* assets.json in Resources */,
 				C0E6DC632978177100FE7E3E /* Preview Assets.xcassets in Resources */,
 				C0E6DC602978177100FE7E3E /* Assets.xcassets in Resources */,
 			);
@@ -217,8 +246,11 @@
 				C0F7E1A3297837A000AF3553 /* AssetBannerView.swift in Sources */,
 				C0F7E1A6297837A000AF3553 /* PageViewController.swift in Sources */,
 				C0F7E1A4297837A000AF3553 /* PageControl.swift in Sources */,
+				C0F7E1AC2978451700AF3553 /* AssetStore.swift in Sources */,
 				C0F7E19E297837A000AF3553 /* AssetBanner.swift in Sources */,
 				C0F7E1A2297837A000AF3553 /* AssetView.swift in Sources */,
+				C0F7E1AA2978441F00AF3553 /* Asset.swift in Sources */,
+				C055C74329784752008B48CE /* AssetSectionView.swift in Sources */,
 				C0E6DC5E2978177000FE7E3E /* ContentView.swift in Sources */,
 				C0E6DC5C2978177000FE7E3E /* Upper_Intermediate_01App.swift in Sources */,
 				C0F7E1A5297837A000AF3553 /* BannerCard.swift in Sources */,

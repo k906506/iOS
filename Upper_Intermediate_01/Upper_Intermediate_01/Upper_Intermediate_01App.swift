@@ -11,7 +11,7 @@ import SwiftUI
 struct Upper_Intermediate_01App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(AssetStore())
         }
     }
 }
