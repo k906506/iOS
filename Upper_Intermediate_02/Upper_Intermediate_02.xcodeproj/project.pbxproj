@@ -23,6 +23,7 @@
 		C055C77B29797167008B48CE /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C055C77A29797167008B48CE /* SeparatorView.swift */; };
 		C058F535297988BB004E7EA3 /* RankingFeatureSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C058F534297988BB004E7EA3 /* RankingFeatureSectionView.swift */; };
 		C058F53729799297004E7EA3 /* RankingFeatureCollectionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C058F53629799296004E7EA3 /* RankingFeatureCollectionCellView.swift */; };
+		C058F53B297999D5004E7EA3 /* ExchangeCodeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C058F53A297999D5004E7EA3 /* ExchangeCodeButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		C055C77A29797167008B48CE /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		C058F534297988BB004E7EA3 /* RankingFeatureSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingFeatureSectionView.swift; sourceTree = "<group>"; };
 		C058F53629799296004E7EA3 /* RankingFeatureCollectionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingFeatureCollectionCellView.swift; sourceTree = "<group>"; };
+		C058F53A297999D5004E7EA3 /* ExchangeCodeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeCodeButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		C055C77329795D40008B48CE /* App */ = {
 			isa = PBXGroup;
 			children = (
+				C058F539297999C0004E7EA3 /* Exchange */,
 				C058F53829799957004E7EA3 /* Feature */,
 				C058F533297988A5004E7EA3 /* Ranking */,
 				C055C77429795D53008B48CE /* AppViewController.swift */,
@@ -125,6 +128,14 @@
 				C055C77829796B25008B48CE /* FeatureSectionCellView.swift */,
 			);
 			path = Feature;
+			sourceTree = "<group>";
+		};
+		C058F539297999C0004E7EA3 /* Exchange */ = {
+			isa = PBXGroup;
+			children = (
+				C058F53A297999D5004E7EA3 /* ExchangeCodeButtonView.swift */,
+			);
+			path = Exchange;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +218,7 @@
 			files = (
 				C055C76E2978F491008B48CE /* TodayViewController.swift in Sources */,
 				C055C7572978DD51008B48CE /* TabBarController.swift in Sources */,
+				C058F53B297999D5004E7EA3 /* ExchangeCodeButtonView.swift in Sources */,
 				C055C77B29797167008B48CE /* SeparatorView.swift in Sources */,
 				C058F535297988BB004E7EA3 /* RankingFeatureSectionView.swift in Sources */,
 				C055C7532978DD51008B48CE /* AppDelegate.swift in Sources */,

@@ -20,7 +20,7 @@ final class AppViewController: UIViewController {
         
         let featureSectionView = FeatureSectionView(frame: .zero)
         let rankingFeatureSectionView = RankingFeatureSectionView(frame: .zero)
-        let exchangeCodeButtonView = UIView()
+        let exchangeCodeButtonView = ExchangeCodeButtonView(frame: .zero)
         
         [
             featureSectionView, rankingFeatureSectionView, exchangeCodeButtonView].forEach {
