@@ -17,6 +17,10 @@
 		C055C76E2978F491008B48CE /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C055C76D2978F491008B48CE /* TodayViewController.swift */; };
 		C055C7702978FE92008B48CE /* TodayCollectionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C055C76F2978FE92008B48CE /* TodayCollectionCellView.swift */; };
 		C055C772297909FA008B48CE /* TodayCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C055C771297909FA008B48CE /* TodayCollectionHeaderView.swift */; };
+		C055C77529795D53008B48CE /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C055C77429795D53008B48CE /* AppViewController.swift */; };
+		C055C77729796516008B48CE /* FeatureSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C055C77629796516008B48CE /* FeatureSectionView.swift */; };
+		C055C77929796B25008B48CE /* FeatureSectionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C055C77829796B25008B48CE /* FeatureSectionCellView.swift */; };
+		C055C77B29797167008B48CE /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C055C77A29797167008B48CE /* SeparatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		C055C76D2978F491008B48CE /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		C055C76F2978FE92008B48CE /* TodayCollectionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCollectionCellView.swift; sourceTree = "<group>"; };
 		C055C771297909FA008B48CE /* TodayCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCollectionHeaderView.swift; sourceTree = "<group>"; };
+		C055C77429795D53008B48CE /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
+		C055C77629796516008B48CE /* FeatureSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureSectionView.swift; sourceTree = "<group>"; };
+		C055C77829796B25008B48CE /* FeatureSectionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureSectionCellView.swift; sourceTree = "<group>"; };
+		C055C77A29797167008B48CE /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,7 @@
 		C055C7512978DD51008B48CE /* Upper_Intermediate_02 */ = {
 			isa = PBXGroup;
 			children = (
+				C055C77329795D40008B48CE /* App */,
 				C055C76C2978F480008B48CE /* Today */,
 				C055C7522978DD51008B48CE /* AppDelegate.swift */,
 				C055C7542978DD51008B48CE /* SceneDelegate.swift */,
@@ -83,6 +92,17 @@
 				C055C771297909FA008B48CE /* TodayCollectionHeaderView.swift */,
 			);
 			path = Today;
+			sourceTree = "<group>";
+		};
+		C055C77329795D40008B48CE /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C055C77429795D53008B48CE /* AppViewController.swift */,
+				C055C77629796516008B48CE /* FeatureSectionView.swift */,
+				C055C77829796B25008B48CE /* FeatureSectionCellView.swift */,
+				C055C77A29797167008B48CE /* SeparatorView.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,10 +185,14 @@
 			files = (
 				C055C76E2978F491008B48CE /* TodayViewController.swift in Sources */,
 				C055C7572978DD51008B48CE /* TabBarController.swift in Sources */,
+				C055C77B29797167008B48CE /* SeparatorView.swift in Sources */,
 				C055C7532978DD51008B48CE /* AppDelegate.swift in Sources */,
 				C055C772297909FA008B48CE /* TodayCollectionHeaderView.swift in Sources */,
+				C055C77529795D53008B48CE /* AppViewController.swift in Sources */,
 				C055C7702978FE92008B48CE /* TodayCollectionCellView.swift in Sources */,
 				C055C7552978DD51008B48CE /* SceneDelegate.swift in Sources */,
+				C055C77929796B25008B48CE /* FeatureSectionCellView.swift in Sources */,
+				C055C77729796516008B48CE /* FeatureSectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
