@@ -101,10 +101,9 @@
 		C055C77329795D40008B48CE /* App */ = {
 			isa = PBXGroup;
 			children = (
+				C058F53829799957004E7EA3 /* Feature */,
 				C058F533297988A5004E7EA3 /* Ranking */,
 				C055C77429795D53008B48CE /* AppViewController.swift */,
-				C055C77629796516008B48CE /* FeatureSectionView.swift */,
-				C055C77829796B25008B48CE /* FeatureSectionCellView.swift */,
 				C055C77A29797167008B48CE /* SeparatorView.swift */,
 			);
 			path = App;
@@ -117,6 +116,15 @@
 				C058F53629799296004E7EA3 /* RankingFeatureCollectionCellView.swift */,
 			);
 			path = Ranking;
+			sourceTree = "<group>";
+		};
+		C058F53829799957004E7EA3 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				C055C77629796516008B48CE /* FeatureSectionView.swift */,
+				C055C77829796B25008B48CE /* FeatureSectionCellView.swift */,
+			);
+			path = Feature;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
