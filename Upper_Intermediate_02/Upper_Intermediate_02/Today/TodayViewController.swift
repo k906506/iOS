@@ -9,6 +9,8 @@ import UIKit
 import SnapKit
 
 final class TodayViewController: UIViewController {
+    private var todayList: [Today] = []
+    
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -31,6 +33,8 @@ final class TodayViewController: UIViewController {
         collectionView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
+        
+        fetchData()
     }
 }
 
@@ -39,14 +43,14 @@ extension TodayViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TodayCollectionCellView", for: indexPath) as? TodayCollectionCellView else { return UICollectionViewCell() }
         
-        cell.setup()
+        cell.setup(today: todayList[indexPath.row])
         
         return cell
     }
     
     // 하나의 섹션에 몇 개의 셀을 그릴지 요청하는 메서드
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return todayList.count
     }
     
     // 헤더를 설정하는 메서드
@@ -83,7 +87,24 @@ extension TodayViewController: UICollectionViewDelegateFlowLayout {
     
     // 특정 셀이 눌렸을 때
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = AppDetailViewController()
+        let vc = AppDetailViewController(today: todayList[indexPath.row])
         present(vc, animated: true, completion: nil)
+    }
+}
+
+private extension TodayViewController {
+    func fetchData() {
+        guard let url = Bundle.main.url(forResource: "Today", withExtension: "plist") else { return }
+        
+        do {
+            todayList = []
+            
+            let data = try Data(contentsOf: url)
+            let result = try PropertyListDecoder().decode([Today].self, from: data)
+            
+            todayList = result
+        } catch {
+            print("[ERROR] No Data")
+        }
     }
 }

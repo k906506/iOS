@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 final class TodayCollectionCellView: UICollectionViewCell {
     private lazy var titleLabel: UILabel = {
@@ -43,7 +44,7 @@ final class TodayCollectionCellView: UICollectionViewCell {
         return imageView
     }()
     
-    func setup() {
+    func setup(today: Today) {
         setupSubViews()
         
         // Cell의 그림자
@@ -51,9 +52,14 @@ final class TodayCollectionCellView: UICollectionViewCell {
         layer.shadowOpacity = 0.3
         layer.shadowRadius = 8
         
-        titleLabel.text = "제목"
-        subtitleLabel.text = "부제목"
-        descriptionLabel.text = "구체적인 설명"
+        titleLabel.text = today.title
+        subtitleLabel.text = today.subTitle
+        descriptionLabel.text = today.description
+        
+        if let imageURL = URL(string: today.imageURL) {
+            imageView.kf.setImage(with: imageURL)
+        }
+        
     }
 }
 

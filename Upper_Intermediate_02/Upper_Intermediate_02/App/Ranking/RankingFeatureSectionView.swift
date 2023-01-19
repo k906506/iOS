@@ -10,6 +10,7 @@ import UIKit
 
 final class RankingFeatureSectionView: UIView {
     private let cellHeight = 70.0
+    private var rankingFeatureList: [RankingFeature] = []
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -57,6 +58,9 @@ final class RankingFeatureSectionView: UIView {
         super.init(frame: frame)
         
         setupViews()
+        
+        fetchData()
+        collectionView.reloadData()
     }
     
     required init?(coder: NSCoder) {
@@ -68,13 +72,13 @@ extension RankingFeatureSectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RankingFeatureCollectionCellView", for: indexPath) as? RankingFeatureCollectionCellView else { return UICollectionViewCell() }
         
-        cell.setup()
+        cell.setup(rankingFeature: rankingFeatureList[indexPath.row])
                 
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return rankingFeatureList.count
     }
 }
 
@@ -112,6 +116,21 @@ private extension RankingFeatureSectionView {
         separatorView.snp.makeConstraints {
             $0.top.equalTo(collectionView.snp.bottom).offset(16)
             $0.leading.bottom.trailing.equalToSuperview()
+        }
+    }
+    
+    func fetchData() {
+        guard let url = Bundle.main.url(forResource: "RankingFeature", withExtension: "plist") else { return }
+        
+        do {
+            rankingFeatureList = []
+            
+            let data = try Data(contentsOf: url)
+            let result = try PropertyListDecoder().decode([RankingFeature].self, from: data)
+            
+            rankingFeatureList = result
+        } catch {
+            print("[ERROR] No Data")
         }
     }
 }

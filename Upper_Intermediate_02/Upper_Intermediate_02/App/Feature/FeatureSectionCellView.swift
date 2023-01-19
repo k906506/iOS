@@ -44,17 +44,20 @@ final class FeatureSectionCellView: UICollectionViewCell {
         imageView.layer.borderColor = UIColor.separator.cgColor
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
-        imageView.backgroundColor = .blue
         
         return imageView
     }()
     
-    func setup() {
+    func setup(feature: Feature) {
         setupLayout()
         
-        titleLabel.text = "타입"
-        appNameLabel.text = "앱 이름"
-        descriptionLabel.text = "앱 설명"
+        titleLabel.text = feature.type
+        appNameLabel.text = feature.appName
+        descriptionLabel.text = feature.description
+        
+        if let imageURL = URL(string: feature.imageURL) {
+            imageView.kf.setImage(with: imageURL)
+        }
     }
 }
 
