@@ -10,6 +10,7 @@ import UIKit
 
 class StationSearchViewController: UIViewController {
     private var stations: [Station] = []
+    private var selectedStationName: String = ""
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -92,13 +93,15 @@ extension StationSearchViewController: UITableViewDataSource {
 
 extension StationSearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = StationDetailViewController()
+        
+        let vc = StationDetailViewController(stationName: stations[indexPath.row].stationName)
         navigationController?.pushViewController(vc, animated: true)
     }
 }
 
 extension StationSearchViewController: UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        tableView.reloadData()
         tableView.isHidden = false
     }
     
