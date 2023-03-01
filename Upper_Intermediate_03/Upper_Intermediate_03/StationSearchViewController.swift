@@ -9,7 +9,7 @@ import SnapKit
 import UIKit
 
 class StationSearchViewController: UIViewController {
-    private var numberOfCell: Int = 0
+    private var stations: [Station] = []
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -19,7 +19,7 @@ class StationSearchViewController: UIViewController {
         
         return tableView
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,16 +43,48 @@ class StationSearchViewController: UIViewController {
         view.addSubview(tableView)
         tableView.snp.makeConstraints { $0.edges.equalToSuperview() }
     }
+    
+    private func reqeustStationName(from stationName: String) {
+        let string = "http://openapi.seoul.go.kr:8088/sample/json/SearchInfoBySubwayNameService/1/5/\(stationName)"
+        let url = URL(string: string.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")!
+        
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard error == nil else {
+                print("Error occur: \(String(describing: error))")
+                return
+            }
+            
+            guard let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                print("No Data")
+                return
+            }
+            
+            let decoder = JSONDecoder()
+            let stationResponseModel = try? decoder.decode(StationResponseModel.self, from: data)
+            
+            if let stationResponseModel {
+                self.stations = stationResponseModel.stations
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
+        
+        task.resume()
+    }
 }
 
 extension StationSearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numberOfCell
+        return stations.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "\(indexPath.row)"
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "StationSearchCell")
+        
+        cell.textLabel?.text = stations[indexPath.row].stationName
+        cell.detailTextLabel?.text = stations[indexPath.row].lineNumber
         
         return cell
     }
@@ -67,13 +99,15 @@ extension StationSearchViewController: UITableViewDelegate {
 
 extension StationSearchViewController: UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        numberOfCell = 10
-        tableView.reloadData()
         tableView.isHidden = false
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        numberOfCell = 0
         tableView.isHidden = true
+        stations = []
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        reqeustStationName(from: searchText)
     }
 }
