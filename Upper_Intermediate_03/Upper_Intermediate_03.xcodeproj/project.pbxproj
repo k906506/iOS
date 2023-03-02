@@ -14,6 +14,10 @@
 		BF0C905C29A7B469004D87E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0C905A29A7B469004D87E2 /* LaunchScreen.storyboard */; };
 		BF67D12129A7B79E004CA8A7 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BF67D12029A7B79E004CA8A7 /* SnapKit */; };
 		BF67D12429A7B7C4004CA8A7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = BF67D12329A7B7C4004CA8A7 /* Alamofire */; };
+		C01BB0C029ADF2F30069574F /* StationDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01BB0BF29ADF2F30069574F /* StationDetailCollectionViewCell.swift */; };
+		C01BB0D529AE2BFF0069574F /* StationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01BB0D429AE2BFF0069574F /* StationDetailViewController.swift */; };
+		C01BB0D729AE4DCE0069574F /* StationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01BB0D629AE4DCE0069574F /* StationResponseModel.swift */; };
+		C01BB0D929AF23AF0069574F /* RealtimeArrivalList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01BB0D829AF23AF0069574F /* RealtimeArrivalList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		BF0C905829A7B469004D87E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF0C905B29A7B469004D87E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF0C905D29A7B469004D87E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C01BB0BF29ADF2F30069574F /* StationDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		C01BB0D429AE2BFF0069574F /* StationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailViewController.swift; sourceTree = "<group>"; };
+		C01BB0D629AE4DCE0069574F /* StationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationResponseModel.swift; sourceTree = "<group>"; };
+		C01BB0D829AF23AF0069574F /* RealtimeArrivalList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeArrivalList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,10 @@
 				BF0C905829A7B469004D87E2 /* Assets.xcassets */,
 				BF0C905A29A7B469004D87E2 /* LaunchScreen.storyboard */,
 				BF0C905D29A7B469004D87E2 /* Info.plist */,
+				C01BB0BF29ADF2F30069574F /* StationDetailCollectionViewCell.swift */,
+				C01BB0D429AE2BFF0069574F /* StationDetailViewController.swift */,
+				C01BB0D629AE4DCE0069574F /* StationResponseModel.swift */,
+				C01BB0D829AF23AF0069574F /* RealtimeArrivalList.swift */,
 			);
 			path = Upper_Intermediate_03;
 			sourceTree = "<group>";
@@ -147,8 +159,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF0C905429A7B466004D87E2 /* StationSearchViewController.swift in Sources */,
+				C01BB0D729AE4DCE0069574F /* StationResponseModel.swift in Sources */,
+				C01BB0C029ADF2F30069574F /* StationDetailCollectionViewCell.swift in Sources */,
 				BF0C905029A7B466004D87E2 /* AppDelegate.swift in Sources */,
+				C01BB0D929AF23AF0069574F /* RealtimeArrivalList.swift in Sources */,
 				BF0C905229A7B466004D87E2 /* SceneDelegate.swift in Sources */,
+				C01BB0D529AE2BFF0069574F /* StationDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

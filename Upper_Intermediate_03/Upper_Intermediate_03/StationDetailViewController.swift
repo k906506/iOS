@@ -12,6 +12,7 @@ final class StationDetailViewController: UIViewController {
     let stationName: String
     
     private var arrivalInfos: [RealtimeArrival] = []
+    private var timer: Timer?
     
     private lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -34,13 +35,29 @@ final class StationDetailViewController: UIViewController {
         return collectionView
     }()
     
+    private lazy var infoLabel: UILabel = {
+        let label = UILabel()
+        label.text = "30초마다 자동으로 갱신합니다."
+        label.font = .systemFont(ofSize: 12, weight: .medium)
+        label.textColor = .secondaryLabel
+        
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupLayout()
         fetchData()
+        startTimer()
         
         navigationItem.title = stationName
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        cancelTimer()
     }
     
     init(stationName: String) {
@@ -72,6 +89,8 @@ final class StationDetailViewController: UIViewController {
                 return
             }
             
+            print(String(decoding: data, as: UTF8.self))
+            
             if let realtimeArrivalListResponseModel = try? JSONDecoder().decode(RealtimeArrivalListResponseModel.self, from: data) {
                 self?.arrivalInfos = realtimeArrivalListResponseModel.realtimeArrivalList
                 
@@ -82,6 +101,26 @@ final class StationDetailViewController: UIViewController {
         }
         
         task.resume()
+    }
+    
+    private func startTimer() {
+        if let currentTimer = timer {
+            if !currentTimer.isValid {
+                timer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(fetchData), userInfo: nil, repeats: true)
+            }
+        } else {
+            timer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(fetchData), userInfo: nil, repeats: true)
+        }
+        
+        print("타이머 시작")
+    }
+    
+    private func cancelTimer() {
+        if let currentTimer = timer {
+            if currentTimer.isValid { currentTimer.invalidate() }
+        }
+        
+        print("타이머 종료")
     }
 }
 
