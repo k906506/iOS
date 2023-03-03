@@ -14,7 +14,7 @@ final class ProfileViewController: UIViewController {
             image: UIImage(systemName: "ellipsis"),
             style: .plain,
             target: self,
-            action: nil)
+            action: #selector(didTapEllipseButton))
         
         return button
     }()
@@ -101,6 +101,20 @@ final class ProfileViewController: UIViewController {
         navigationItem.rightBarButtonItem = ellipsisButton
         
         setupLayout()
+    }
+    
+    @objc private func didTapEllipseButton() {
+        let actionSheet = UIAlertController(title: nil,
+                                            message: nil,
+                                            preferredStyle: .actionSheet)
+        
+        [
+            UIAlertAction(title: "회원 정보 변경", style: .default),
+            UIAlertAction(title: "탈퇴하기", style: .destructive),
+            UIAlertAction(title: "닫기", style: .cancel)
+        ].forEach {  actionSheet.addAction($0) }
+        
+        present(actionSheet, animated: true)
     }
 }
 
