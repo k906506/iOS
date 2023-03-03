@@ -20,6 +20,7 @@
 		C0619BB129B1C9550097193B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0619BB029B1C9550097193B /* ProfileViewController.swift */; };
 		C0619BB329B1DCC50097193B /* ProfileDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0619BB229B1DCC50097193B /* ProfileDataView.swift */; };
 		C0619BB529B1E36D0097193B /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0619BB429B1E36D0097193B /* ProfileCollectionViewCell.swift */; };
+		C0619BB729B1F0CC0097193B /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0619BB629B1F0CC0097193B /* UploadViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		C0619BB029B1C9550097193B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C0619BB229B1DCC50097193B /* ProfileDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataView.swift; sourceTree = "<group>"; };
 		C0619BB429B1E36D0097193B /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
+		C0619BB629B1F0CC0097193B /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				C0619BB029B1C9550097193B /* ProfileViewController.swift */,
 				C0619BB229B1DCC50097193B /* ProfileDataView.swift */,
 				C0619BB429B1E36D0097193B /* ProfileCollectionViewCell.swift */,
+				C0619BB629B1F0CC0097193B /* UploadViewController.swift */,
 			);
 			path = Upper_intermediate_04;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C00AD0FD29B0601900399384 /* ViewController.swift in Sources */,
+				C0619BB729B1F0CC0097193B /* UploadViewController.swift in Sources */,
 				C0619BAF29B1C7940097193B /* UIButton+.swift in Sources */,
 				C00AD11429B0791300399384 /* FeedTableViewCell.swift in Sources */,
 				C00AD10D29B060D700399384 /* TabBarController.swift in Sources */,
@@ -314,6 +318,7 @@
 				DEVELOPMENT_TEAM = N4P48JMYVV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Upper_intermediate_04/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "사진 추가를 위해서는 해당 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -341,6 +346,7 @@
 				DEVELOPMENT_TEAM = N4P48JMYVV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Upper_intermediate_04/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "사진 추가를 위해서는 해당 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

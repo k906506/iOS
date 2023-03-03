@@ -40,7 +40,7 @@ final class ProfileViewController: UIViewController {
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         
-        label.text = "안녕하세요, 반갑습니다"
+        label.text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
         label.font = .systemFont(ofSize: 14.0, weight: .medium)
         label.numberOfLines = 0 // 제한 없음
         
@@ -175,7 +175,7 @@ private extension ProfileViewController {
         descriptionLabel.snp.makeConstraints {
             $0.top.equalTo(nameLabel.snp.bottom).offset(8)
             $0.leading.equalTo(nameLabel.snp.leading)
-            $0.trailing.equalToSuperview().offset(12)
+            $0.trailing.equalToSuperview().inset(12)
         }
         
         buttonStackView.snp.makeConstraints {
