@@ -17,6 +17,9 @@
 		C00AD11229B0639400399384 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C00AD11129B0639400399384 /* SnapKit */; };
 		C00AD11429B0791300399384 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00AD11329B0791300399384 /* FeedTableViewCell.swift */; };
 		C0619BAF29B1C7940097193B /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0619BAE29B1C7940097193B /* UIButton+.swift */; };
+		C0619BB129B1C9550097193B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0619BB029B1C9550097193B /* ProfileViewController.swift */; };
+		C0619BB329B1DCC50097193B /* ProfileDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0619BB229B1DCC50097193B /* ProfileDataView.swift */; };
+		C0619BB529B1E36D0097193B /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0619BB429B1E36D0097193B /* ProfileCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,9 @@
 		C00AD10E29B0632700399384 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		C00AD11329B0791300399384 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		C0619BAE29B1C7940097193B /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		C0619BB029B1C9550097193B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C0619BB229B1DCC50097193B /* ProfileDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataView.swift; sourceTree = "<group>"; };
+		C0619BB429B1E36D0097193B /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,9 @@
 				C00AD10E29B0632700399384 /* FeedViewController.swift */,
 				C00AD11329B0791300399384 /* FeedTableViewCell.swift */,
 				C0619BAE29B1C7940097193B /* UIButton+.swift */,
+				C0619BB029B1C9550097193B /* ProfileViewController.swift */,
+				C0619BB229B1DCC50097193B /* ProfileDataView.swift */,
+				C0619BB429B1E36D0097193B /* ProfileCollectionViewCell.swift */,
 			);
 			path = Upper_intermediate_04;
 			sourceTree = "<group>";
@@ -160,7 +169,10 @@
 				C00AD10D29B060D700399384 /* TabBarController.swift in Sources */,
 				C00AD10F29B0632700399384 /* FeedViewController.swift in Sources */,
 				C00AD0F929B0601900399384 /* AppDelegate.swift in Sources */,
+				C0619BB129B1C9550097193B /* ProfileViewController.swift in Sources */,
 				C00AD0FB29B0601900399384 /* SceneDelegate.swift in Sources */,
+				C0619BB529B1E36D0097193B /* ProfileCollectionViewCell.swift in Sources */,
+				C0619BB329B1DCC50097193B /* ProfileDataView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
